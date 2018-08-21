@@ -1,5 +1,21 @@
 class GoodsCommitmentsController < InheritedResources::Base
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
+
+  def create
+    super do |format|
+      format.html {
+        if @goods_commitment.present? and @goods_commitment.id.present?
+          redirect_to goods_commitment_path(@goods_commitment),
+                                notice: "Your request was successfully placed.
+                                        You will soon recieve a message with your password.
+                                       Login to see and track your donations. #keralafloods"
+        else
+          redirect_to goods_commitments_path,
+                      notice: "Please fill the fields properly"
+        end
+      }
+    end
+  end
 
   private
 

@@ -8,7 +8,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  enumerize :user_type, in: %w(coordinator volunteer), predicates: true, scope: :of_type
+  enumerize :user_type, in: %w(coordinator volunteer goods_donor), predicates: true, scope: :of_type
 
   has_many :camp_members
   has_many :relief_camps, through: :camp_members
