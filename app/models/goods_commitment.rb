@@ -8,16 +8,21 @@ class GoodsCommitment < ApplicationRecord
   accepts_nested_attributes_for :inventories, allow_destroy: true
 
   before_create do
-    user = User.find_by_email(self.email)
+    user = User.find_by_phone_number(self.phone_number)
+    otp = 100000 + SecureRandom.random_number(90000)
     if user.nil?
-      if self.name and self.email
+      if self.name.present? and self.phone_number.present?
         user = User.create({
              name: self.name,
              email: self.email,
              phone_number: self.phone_number,
-             password: "password"
+             password: otp
          })
+        message = "Your password is #{otp}. Please user your email or phone to sign_in to track your donation. #savekerala"
+        TwilioTextMessenger.new(message).call("+#{user.phone_number}")
         self.user_id = user.id
+      else
+        throw(:abort)
       end
     else
       self.user_id = user.id

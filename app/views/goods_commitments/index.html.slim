@@ -1,8 +1,13 @@
-h1 Listing goods_commitments
+.div class="col m12 center"
+  h4 = notice
+.div class="col m12 center tb-mrgn-20"
+  h5 LIST GOODS DETAILS
 
 table
   thead
     tr
+      th Location
+      th Date
       th
       th
       th
@@ -10,6 +15,8 @@ table
   tbody
     - @goods_commitments.each do |goods_commitment|
       tr
+        td = goods_commitment.location
+        td = goods_commitment.available_from
         td = link_to 'Show', goods_commitment
         td = link_to 'Edit', edit_goods_commitment_path(goods_commitment)
         td = link_to 'Destroy', goods_commitment, data: { confirm: 'Are you sure?' }, method: :delete
