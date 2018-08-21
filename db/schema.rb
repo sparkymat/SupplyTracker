@@ -286,6 +286,7 @@ ActiveRecord::Schema.define(version: 2018_08_21_134811) do
     t.string "phone_number"
     t.string "whatsapp_number"
     t.bigint "relief_camp_id"
+    t.string "user_type"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["relief_camp_id"], name: "index_users_on_relief_camp_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
