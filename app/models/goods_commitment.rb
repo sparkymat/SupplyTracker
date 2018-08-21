@@ -18,8 +18,8 @@ class GoodsCommitment < ApplicationRecord
              phone_number: self.phone_number,
              password: otp
          })
-        message = "Your password is #{otp}. Please user your email or phone to sign_in to track your donation. #savekerala"
-        TwilioTextMessenger.new(message).call("+#{user.phone_number}")
+        # message = "Your password is #{otp}. Please user your email or phone to sign_in to track your donation. #savekerala"
+        # TwilioTextMessenger.new(message).call("+#{user.phone_number}")
         self.user_id = user.id
       else
         throw(:abort)

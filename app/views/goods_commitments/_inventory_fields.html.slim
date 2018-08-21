@@ -1,10 +1,12 @@
 .nested-fields
   .div class="row col m12 tb-mrgn-10"
-    .div class = "row col m3 s12"
-      = f.association :item_category, input_html: {class: 'chosen-select'}
+    .div class = "row col m2 s12"
+      = f.association :item_category, label: "Category", input_html: {class: 'chosen-select'}
+    .div class="row col m2 s12"
+      = f.association :item_type, collection: [["Add New", ""]] + ItemType.all.map { |item| [item.name, item.id] }
     .div class="row col m3 s12"
-      = f.association :item_type
-    .div class="row col m3 s12"
+      = f.input :item_type_name, placeholder: "Item Name"
+    .div class="row col m2 s12"
       = f.association :item_unit
     .div class="row col m2 s12"
       = f.input :quantity
