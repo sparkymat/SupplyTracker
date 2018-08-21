@@ -42,7 +42,8 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'has_scope'
 gem 'inherited_resources'
-gem "cocoon"
+gem 'cocoon'
+gem 'twilio-ruby'
 
 gem 'whenever', '0.9.2'
 gem 'delayed_job_active_record'
