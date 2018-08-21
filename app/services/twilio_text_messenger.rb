@@ -1,6 +1,4 @@
 class TwilioTextMessenger
-  CONFIG = YAML.load_file("#{::Rails.root}/config/secrets.yml")[::Rails.env]
-
   attr_reader :message
 
   def initialize(message)
@@ -8,9 +6,9 @@ class TwilioTextMessenger
   end
 
   def call(to)
-    client = Twilio::REST::Client.new CONFIG["twilio_account_sid"], CONFIG["twilio_auth_token"]
+    client = Twilio::REST::Client.new Settings.twilio_account_sid, Settings.twilio_auth_token
     client.messages.create({
-         from: CONFIG["twilio_phone_number"],
+         from: Settings.twilio_phone_number,
          to: to,
          body: message
      })
