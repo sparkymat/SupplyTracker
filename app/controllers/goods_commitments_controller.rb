@@ -10,7 +10,7 @@ class GoodsCommitmentsController < InheritedResources::Base
                                         You will soon recieve a message with your password.
                                        Login to see and track your donations. #keralafloods"
         else
-          redirect_to goods_commitments_path,
+          redirect_to new_goods_commitment_path,
                       notice: "Please fill the fields properly"
         end
       }
