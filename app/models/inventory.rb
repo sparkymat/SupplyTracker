@@ -9,9 +9,11 @@ class Inventory < ApplicationRecord
   belongs_to :item_unit, optional: true
   belongs_to :area, optional: true
 
+  has_one :district, through: :area
+
   scope :has_item_category_id, ->(id) {where(item_category_id: id)}
   scope :has_item_type_id, ->(id) {where(item_type_id: id)}
-  scope :has_district_id, ->(id) {where(district_id: id)}
+  scope :has_district_id, ->(id) {where(area_id: Area.where(district_id: id).select(:id))}
   scope :has_area_id, ->(id) {where(area_id: id)}
   scope :has_name, -> (name){where("name ILIKE ?", "%#{name}%") }
 

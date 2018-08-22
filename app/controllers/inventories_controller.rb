@@ -15,6 +15,19 @@ class InventoriesController < InheritedResources::Base
         }
       ]
     }.to_h
+
+    query_params = params.permit(:item_type_id, :item_category_id, :district_id, :area_id)
+
+    if params[:item_category_id].present? && params[:item_type_id].present? && ItemType.find(params[:item_type_id]).item_category_id.to_s != params[:item_category_id].to_s
+      query_params.merge!(item_category_id: ItemType.find(params[:item_type_id]).item_category_id)
+      return redirect_to inventories_path(query_params)
+    end
+
+    if params[:district_id].present? && params[:area_id].present? && Area.find(params[:area_id]).district_id.to_s != params[:district_id].to_s
+      query_params.merge!(district_id: Area.find(params[:area_id]).district_id)
+      return redirect_to inventories_path(query_params)
+    end
+
     super
   end
 

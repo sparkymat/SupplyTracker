@@ -5,22 +5,16 @@
 
 .div class="col m12 s12 tb-mrgn-20"
   = form_tag(inventories_path, method: :get) do
+    .div class="col m3 s12"
+      = select_tag(:item_category_id, options_from_collection_for_select(ItemCategory.all, :id, :name, params[:item_category_id]), prompt: "Category")
+    .div class="col m3 s12"
+      = select_tag(:item_type_id, options_from_collection_for_select(ItemType.all, :id, :name, params[:item_type_id]), prompt: "Item Type")
     .div class="col m2 s12"
-      = text_field_tag(:search, params[:search], placeholder: "Search Area")
+      = select_tag(:district_id, options_from_collection_for_select(District.all, :id, :name, params[:district_id].present? ? params[:district_id].to_s : (params[:area_id].present? ? Area.find(params[:area_id]).district_id.to_s : nil)), prompt: "Select district")
     .div class="col m2 s12"
-      = select_tag(:item_category_id, options_from_collection_for_select(ItemCategory.all, :id, :name),
-              prompt: "Category")
-    .div class="col m2 s12"
-      = select_tag(:item_type_id, options_from_collection_for_select(ItemType.all, :id, :name),
-              prompt: "Item Type")
-    / .div class="col m2 s12"
-    /   = select_tag(:district_id, options_from_collection_for_select(District.all, :id, :name),
-    /           prompt: "District")
-    .div class="col m2 s12"
-      = select_tag(:area_id, options_from_collection_for_select(Area.all, :id, :name),
-              prompt: "Select Area")
+      = select_tag(:area_id, options_from_collection_for_select(Area.all, :id, :name, params[:area_id]), prompt: "Select area")
     .div class="col m2 s12 searchButton" style="float:right"
-      = submit_tag("Search")
+      = submit_tag("Search", class: 'btn btn-large')
 
 .row
   .col.s12.l10.offset-l1
@@ -67,3 +61,8 @@ table
 br
 
 = link_to 'New Inventory', new_inventory_path
+
+javascript:
+  $('select#item_category_id').on('change', function() {
+    $('select#item_type_id').value = null;
+  });
