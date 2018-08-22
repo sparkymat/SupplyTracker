@@ -9,7 +9,7 @@
         = f.input :email, label: "Email*"
       .div class="col m2 s12"
         = f.input :phone_code, as: :select, collection: load_code.map{ |x| ["#{x[:_name]}(+#{x[:_phone_code]})", x[:_phone_code]]},
-                default: "91", placeholder: "91", label: "Country Code*", input_html: {class: 'chosen-select'}
+                selected:91, placeholder: "91", label: "Country Code*", input_html: {id: "country_code"}
       .div class="col m2 s12"
         = f.input :phone_number, placeholder:"9741211213", label: "Phone Number*"
       .div class="row col m2 s12"
@@ -93,12 +93,12 @@ javascript:
   }
   $(document).ready(function () {
       manageClickActions();
+      $("#country_code").val("91");
+      $('#country_code').formSelect();
       $('form').on('cocoon:after-insert', function (e, insertedItem) {
           $('select').formSelect();
           // $('select').select2({width: "100%"});
           manageClickActions()
       });
-
-
 
   });
