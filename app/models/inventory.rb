@@ -20,5 +20,13 @@ class Inventory < ApplicationRecord
       item_type = ItemType.create({name: self.item_type_name, item_category_id: self.item_category_id})
       self.item_type_id = item_type.id
     end
+
+    self.available_quantity = self.quantity
+
+    if self.goods_commitment.present?
+      self.contact_name = self.goods_commitment.name
+      self.contact_name = self.goods_commitment.phone_number
+      self.available_from = self.goods_commitment.available_from
+    end
   end
 end
