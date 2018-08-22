@@ -5,11 +5,11 @@
   .div class="col m12"
     .form-inputs
       .div class="col m4 s12"
-        = f.input :name
+        = f.input :name, label: "Name*"
       .div class="col m4 s12"
-        = f.input :email
+        = f.input :email, label: "Email*"
       .div class="col m4 s12"
-        = f.input :phone_number
+        = f.input :phone_number, placeholder:"919741211213", label: "Phone Number with Country code*"
       .div class="row col m4 s12"
         = f.input :available_from, input_html: {class: 'datepicker'}
       .div class="col m4 s12"
