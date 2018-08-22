@@ -23,7 +23,7 @@
 
 $(document).ready(function() {
     $('form').on('cocoon:after-insert', function(e, insertedItem){
-        console.log("helllo")
-        $('select').chosen({allow_single_deselect: true, disable_search_threshold: 10});
+        $('select').formSelect();
+        // $('select').select2({width: "100%"});
     });
 });

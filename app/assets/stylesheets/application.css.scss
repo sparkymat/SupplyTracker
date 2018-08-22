@@ -26,12 +26,24 @@ $secondary-color: color("blue", "base") !default;
 //-----------------OVERRIDES------------//
 .input-field {
   width: 100% !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  .select {
+    margin-top: 26px;
+  }
 }
 
 .white {
   color: white;
 }
 
+.submitButton {
+  .form-actions {
+    input {
+      margin: auto;
+    }
+  }
+}
 .searchButton input {
   text-decoration: none;
   color: #fff;

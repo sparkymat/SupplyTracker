@@ -20,6 +20,7 @@ class GoodsCommitmentsController < InheritedResources::Base
   def new
     @goods_commitment = GoodsCommitment.new
     @goods_commitment.available_from = Date.today
+    @goods_commitment.inventories << Inventory.new
   end
 
   def index
