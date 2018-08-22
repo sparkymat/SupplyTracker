@@ -12,6 +12,18 @@ module ApplicationHelper
         code:             t.code,
         item_category_id: t.item_category_id,
       }},
+      districts: District.all.map{|district| {
+          id: district.id,
+          name: district.name,
+          code: district.code,
+          local_name: district.local_name
+      }},
+      areas: Area.all.map{|area| {
+          id: area.id,
+          name: area.name,
+          district_id: area.district_id,
+          locality: area.locality
+      }}
     }
   end
 

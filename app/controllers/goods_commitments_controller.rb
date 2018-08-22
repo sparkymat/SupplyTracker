@@ -23,6 +23,14 @@ class GoodsCommitmentsController < InheritedResources::Base
     @goods_commitment.inventories << Inventory.new
   end
 
+  def edit
+    super do
+      @goods_commitment.name = @goods_commitment.user.try(:name)
+      @goods_commitment.email = @goods_commitment.user.try(:email)
+      @goods_commitment.phone_number = @goods_commitment.user.try(:phone_number)
+    end
+  end
+
   def index
     @goods_commitments = GoodsCommitment.none
   end
