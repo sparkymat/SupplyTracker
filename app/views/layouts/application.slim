@@ -13,6 +13,9 @@ html
       .col.s12.l8.offset-l2
         = yield
     javascript:
+      window.SupplyTracker = {
+        data: JSON.parse('#{ load_data.to_json.html_safe }')
+      };
       document.addEventListener('DOMContentLoaded', function() {
         M.AutoInit();
       });
