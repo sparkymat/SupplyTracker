@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :goods_commitments, only: [:new, :show]
+  resources :goods_commitments, only: [:index, :new, :show]
   resources :item_subtypes
   resources :inventories
   resources :shipped_items
