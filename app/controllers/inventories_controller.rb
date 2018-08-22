@@ -1,5 +1,11 @@
 class InventoriesController < InheritedResources::Base
 
+  has_scope :has_item_category_id, as: :item_category_id
+  has_scope :has_item_type_id, as: :item_type_id
+  has_scope :has_district_id, as: :district_id
+  has_scope :has_area_id, as: :area_id
+  has_scope :has_name, as: :search
+
   private
 
     def inventory_params

@@ -9,9 +9,14 @@ class Inventory < ApplicationRecord
   belongs_to :item_unit, optional: true
   belongs_to :area, optional: true
 
+  scope :has_item_category_id, ->(id) {where(item_category_id: id)}
+  scope :has_item_type_id, ->(id) {where(item_type_id: id)}
+  scope :has_district_id, ->(id) {where(district_id: id)}
+  scope :has_area_id, ->(id) {where(area_id: id)}
+  scope :has_name, -> (name){where("name ILIKE ?", "%#{name}%") }
+
   before_create do
     if self.item_type_name.present?
-      puts "sfsfsfsdfs"
       item_type = ItemType.create({name: self.item_type_name, item_category_id: self.item_category_id})
       self.item_type_id = item_type.id
     end

@@ -1,50 +1,54 @@
-h1 Listing inventories
+.div class="col m12 center" style="color:red"
+  h4 = notice
+.div class="col m12 center tb-mrgn-20"
+  h5 INVENTORY LIST
+
+.div class="col m12 s12 tb-mrgn-20"
+  = form_tag(inventories_path, method: :get) do
+    .div class="col m2 s12"
+      = text_field_tag(:search, params[:search], placeholder: "Search Area")
+    .div class="col m2 s12"
+      = select_tag(:item_category_id, options_from_collection_for_select(ItemCategory.all, :id, :name),
+              prompt: "Category")
+    .div class="col m2 s12"
+      = select_tag(:item_type_id, options_from_collection_for_select(ItemType.all, :id, :name),
+              prompt: "Item Type")
+    / .div class="col m2 s12"
+    /   = select_tag(:district_id, options_from_collection_for_select(District.all, :id, :name),
+    /           prompt: "District")
+    .div class="col m2 s12"
+      = select_tag(:area_id, options_from_collection_for_select(Area.all, :id, :name),
+              prompt: "Select Area")
+    .div class="col m2 s12 searchButton" style="float:right"
+      = submit_tag("Search")
 
 table
   thead
     tr
       th Item category
       th Item type
-      th Item sub type
-      th Item unit
       th Quantity
-      th Area
-      th Latitude
-      th Longitude
       th Address
-      th Initial quantity
       th Available quantity
-      th Source
-      th Volunteer
       th Contact number
       th Contact name
       th Available from
-      th
       th
       th
 
   tbody
     - @inventories.each do |inventory|
       tr
-        td = inventory.item_category
-        td = inventory.item_type
-        td = inventory.item_subtype
-        td = inventory.item_unit
+        td = inventory.item_category.try(:name)
+        td = inventory.item_type.try(:name)
         td = inventory.quantity
-        td = inventory.area
-        td = inventory.latitude
-        td = inventory.longitude
         td = inventory.address
-        td = inventory.initial_quantity
         td = inventory.available_quantity
-        td = inventory.source
-        td = inventory.volunteer_id
         td = inventory.contact_number
         td = inventory.contact_name
         td = inventory.available_from
         td = link_to 'Show', inventory
         td = link_to 'Edit', edit_inventory_path(inventory)
-        td = link_to 'Destroy', inventory, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
 
