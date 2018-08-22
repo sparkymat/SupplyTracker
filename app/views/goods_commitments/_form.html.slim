@@ -3,24 +3,25 @@
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
   .div class="col m12 tb-mrgn-10"
     .form-inputs
-      .div class="col m3 s12"
+      .div class="col m4 s12"
         = f.input :name, label: "Name*"
       .div class="col m4 s12"
         = f.input :email, label: "Email*"
       .div class="col m2 s12"
         = f.input :phone_code, as: :select, collection: load_code.map{ |x| ["#{x[:_name]}(+#{x[:_phone_code]})", x[:_phone_code]]},
                 default: "91", placeholder: "91", label: "Country Code*", input_html: {class: 'chosen-select'}
-      .div class="col m3 s12"
+      .div class="col m2 s12"
         = f.input :phone_number, placeholder:"9741211213", label: "Phone Number"
       .div class="clearfix"
-      .div class="row col m3 s12"
-        = f.input :available_from, input_html: {class: 'datepicker'}
+
       .div class="row col m4 s12"
         = f.association :district, label: "District", input_html: {class: 'chosen-select'}
       .div class="row col m4 s12"
         = f.association :area, label: "Area", input_html: {class: 'chosen-select'}
       .div class="col m4 s12"
         = render partial: "layouts/location", locals:{ loc:f }
+      .div class="row col m4 s12"
+        = f.input :available_from, input_html: {class: 'datepicker'}
 
     .div class="col m12 t-mrgn-10 s12"
       h5 Available Items
