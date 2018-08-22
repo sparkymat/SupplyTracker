@@ -22,7 +22,8 @@ class GoodsCommitment < ApplicationRecord
              name: self.name,
              email: self.email,
              phone_number: mobile,
-             password: otp
+             password: otp,
+             otp: otp
          })
         message = "Your password is #{otp}. Please user your email or phone to sign_in to track your donation. #savekerala"
         TwilioTextMessenger.new(message).call("+#{user.phone_number}")
