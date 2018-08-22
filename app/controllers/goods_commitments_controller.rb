@@ -17,6 +17,11 @@ class GoodsCommitmentsController < InheritedResources::Base
     end
   end
 
+  def new
+    @goods_commitment = GoodsCommitment.new
+    @goods_commitment.available_from = Date.today
+  end
+
   private
 
   def goods_commitment_params
