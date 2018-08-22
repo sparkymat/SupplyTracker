@@ -7,7 +7,7 @@ class GoodsCommitmentsController < InheritedResources::Base
         if @goods_commitment.present? and @goods_commitment.id.present?
           redirect_to goods_commitment_path(@goods_commitment),
                                 notice: "Your request was successfully placed.
-                                        You will soon recieve a message with your password.
+                                        Your password is #{@goods_commitment.user.otp}.
                                        Login to see and track your donations. #keralafloods"
         else
           redirect_to new_goods_commitment_path,
