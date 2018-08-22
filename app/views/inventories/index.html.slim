@@ -22,6 +22,21 @@
     .div class="col m2 s12 searchButton" style="float:right"
       = submit_tag("Search")
 
+.row
+  .col.s12.l10.offset-l1
+    .card
+      .card-content
+        .card-title Summary
+        table
+          tbody
+            - @summary_items.each_pair do |name, quantities|
+              tr
+                th = name
+                td
+                  ul
+                    - quantities.each do |q|
+                      li = q
+
 table
   thead
     tr

@@ -6,6 +6,18 @@ class InventoriesController < InheritedResources::Base
   has_scope :has_area_id, as: :area_id
   has_scope :has_name, as: :search
 
+  def index
+    @summary_items = collection.group_by(&:item_category).map { |item_category, inventory_collection|
+      [
+        item_category.name,
+        inventory_collection.group_by(&:item_unit).map{ |item_unit, inner_inventory_collection|
+            "#{inner_inventory_collection.sum(&:quantity)} #{item_unit&.name}"
+        }
+      ]
+    }.to_h
+    super
+  end
+
   private
 
     def inventory_params
