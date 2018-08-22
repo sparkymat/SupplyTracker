@@ -12,6 +12,10 @@
         = f.input :phone_number, placeholder:"919741211213", label: "Phone Number with Country code*"
       .div class="row col m4 s12"
         = f.input :available_from, input_html: {class: 'datepicker'}
+      .div class="row col m4 s12"
+        = f.input :district, label: "District", input_html: {class: 'chosen-select'}
+      .div class="row col m4 s12"
+        = f.input :area, label: "Area", input_html: {class: 'chosen-select'}
       .div class="col m4 s12"
         = render partial: "layouts/location", locals:{ loc:f }
 

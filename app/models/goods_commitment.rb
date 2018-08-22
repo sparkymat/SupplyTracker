@@ -5,6 +5,9 @@ class GoodsCommitment < ApplicationRecord
   belongs_to :user, optional:true
   has_many :inventories, dependent: :destroy
 
+  belongs_to :district, required: false
+  belongs_to :area, required: false
+
   accepts_nested_attributes_for :inventories, allow_destroy: true
 
   before_create do
