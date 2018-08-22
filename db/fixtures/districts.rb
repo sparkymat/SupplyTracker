@@ -16,83 +16,81 @@ District.seed(:id,
 )
 
 Area.seed(:id,
-  { id:  1, name: 'Neyyattinkara',      district_id: 12 },
-  { id:  2, name: 'Kattakkada',         district_id: 12 },
-  { id:  3, name: 'Nedumangadu',        district_id: 12 },
-  { id:  4, name: 'Thiruvananthapuram', district_id: 12 },
-  { id:  5, name: 'Chirayinkeezhu',     district_id: 12 },
-  { id:  6, name: 'Varkala',            district_id: 12 },
-  { id:  7, name: 'Kollam',             district_id: 6  },
-  { id:  8, name: 'Kunnathoor',         district_id: 6  },
-  { id:  9, name: 'Karunagappally',     district_id: 6  },
-  { id: 10, name: 'Kottarakkara',       district_id: 6  },
-  { id: 11, name: 'Punalur',            district_id: 6  },
-  { id: 12, name: 'Pathanapuram',       district_id: 6  },
-  { id: 13, name: 'Adoor',              district_id: 11 },
-  { id: 14, name: 'Konni',              district_id: 11 },
-  { id: 15, name: 'Kozhencherry',       district_id: 11 },
-  { id: 16, name: 'Ranni',              district_id: 11 },
-  { id: 17, name: 'Mallappally',        district_id: 11 },
-  { id: 18, name: 'Thiruvalla',         district_id: 11 },
+  { id:  1, name: 'Neyyattinkara',       district_id: 12 },
+  { id:  2, name: 'Kattakkada',          district_id: 12 },
+  { id:  3, name: 'Nedumangadu',         district_id: 12 },
+  { id:  4, name: 'Thiruvananthapuram',  district_id: 12 },
+  { id:  5, name: 'Chirayinkeezhu',      district_id: 12 },
+  { id:  6, name: 'Varkala',             district_id: 12 },
+  { id:  7, name: 'Kollam',              district_id: 6  },
+  { id:  8, name: 'Kunnathoor',          district_id: 6  },
+  { id:  9, name: 'Karunagappally',      district_id: 6  },
+  { id: 10, name: 'Kottarakkara',        district_id: 6  },
+  { id: 11, name: 'Punalur',             district_id: 6  },
+  { id: 12, name: 'Pathanapuram',        district_id: 6  },
+  { id: 13, name: 'Adoor',               district_id: 11 },
+  { id: 14, name: 'Konni',               district_id: 11 },
+  { id: 15, name: 'Kozhencherry',        district_id: 11 },
+  { id: 16, name: 'Ranni',               district_id: 11 },
+  { id: 17, name: 'Mallappally',         district_id: 11 },
+  { id: 18, name: 'Thiruvalla',          district_id: 11 },
+  { id: 19, name: 'Chenganoor',          district_id: 1  },
+  { id: 20, name: 'Mavelikkara',         district_id: 1  },
+  { id: 21, name: 'Karthikappally',      district_id: 1  },
+  { id: 22, name: 'Kuttanad',            district_id: 1  },
+  { id: 23, name: 'Ambalappuzha',        district_id: 1  },
+  { id: 24, name: 'Cherthala',           district_id: 1  },
+  { id: 25, name: 'Changanasserry',      district_id: 7  },
+  { id: 26, name: 'Kottayam',            district_id: 7  },
+  { id: 27, name: 'Vaikom',              district_id: 7  },
+  { id: 28, name: 'Meenachil',           district_id: 7  },
+  { id: 29, name: 'Kanjirappally',       district_id: 7  },
+  { id: 30, name: 'Peermade',            district_id: 3  },
+  { id: 31, name: 'Udumbanchola',        district_id: 3  },
+  { id: 32, name: 'Idukki',              district_id: 3  },
+  { id: 33, name: 'Thodupuzha',          district_id: 3  },
+  { id: 34, name: 'Devikulam',           district_id: 3  },
+  { id: 35, name: 'Kothamangalam',       district_id: 2  },
+  { id: 36, name: 'Muvattupuzha',        district_id: 2  },
+  { id: 37, name: 'Kunnathunad',         district_id: 2  },
+  { id: 38, name: 'Kanayannur',          district_id: 2  },
+  { id: 39, name: 'Kochi',               district_id: 2  },
+  { id: 40, name: 'North Paravur',       district_id: 2  },
+  { id: 41, name: 'Aluva',               district_id: 2  },
+  { id: 42, name: 'Chalakudy',           district_id: 13 },
+  { id: 43, name: 'Mukundapuram',        district_id: 13 },
+  { id: 44, name: 'Kodungallur',         district_id: 13 },
+  { id: 45, name: 'Thrissur',            district_id: 13 },
+  { id: 46, name: 'Chavakkad',           district_id: 13 },
+  { id: 47, name: 'Kunnamkulam',         district_id: 13 },
+  { id: 48, name: 'Thalapilly',          district_id: 13 },
+  { id: 49, name: 'Alathoor',            district_id: 10 },
+  { id: 50, name: 'Chittur',             district_id: 10 },
+  { id: 51, name: 'Palakkad',            district_id: 10 },
+  { id: 52, name: 'Pattambi',            district_id: 10 },
+  { id: 53, name: 'Ottappalam',          district_id: 10 },
+  { id: 54, name: 'Mannarkkad',          district_id: 10 },
+  { id: 55, name: 'Perinthalmanna',      district_id: 9  },
+  { id: 56, name: 'Nilambur',            district_id: 9  },
+  { id: 57, name: 'Eranad',              district_id: 9  },
+  { id: 58, name: 'Kondotty',            district_id: 9  },
+  { id: 59, name: 'Ponnani',             district_id: 9  },
+  { id: 60, name: 'Tirur',               district_id: 9  },
+  { id: 61, name: 'Thiroorangadi',       district_id: 9  },
+  { id: 62, name: 'Kozhikode',           district_id: 8  },
+  { id: 63, name: 'Thamarassery',        district_id: 8  },
+  { id: 64, name: 'Koyilandy',           district_id: 8  },
+  { id: 65, name: 'Vatakara',            district_id: 8  },
+  { id: 66, name: 'Vythiri',             district_id: 14 },
+  { id: 67, name: 'Sulthan Bathery',     district_id: 14 },
+  { id: 68, name: 'Mananthavady',        district_id: 14 },
+  { id: 69, name: 'Thalassery',          district_id: 4  },
+  { id: 70, name: 'Iritty',              district_id: 4  },
+  { id: 71, name: 'Kannur',              district_id: 4  },
+  { id: 72, name: 'Taliparamba',         district_id: 4  },
+  { id: 73, name: 'Payyannur',           district_id: 4  },
+  { id: 74, name: 'Hosdurg',             district_id: 5  },
+  { id: 75, name: 'Vellarikundu',        district_id: 5  },
+  { id: 76, name: 'Kasaragod',           district_id: 5  },
+  { id: 77, name: 'Manjeswaram(Uppala)', district_id: 5  },
 )
-=begin
-Chenganoor 	Alappuzha District 	11
-Mavelikkara 	Alappuzha District 	15
-Karthikappally (HO: Haripad) 	Alappuzha District 	18
-Kuttanad {HO: Mankombu} 	Alappuzha District 	14
-Ambalappuzha (HO: Alappuzha) 	Alappuzha District 	13
-Cherthala 	Alappuzha District 	20
-Changanasserry 	Kottayam District 	15
-Kottayam 	Kottayam District 	26
-Vaikom 	Kottayam District 	18
-Meenachil (HO: Palai) 	Kottayam District 	28
-Kanjirappally 	Kottayam District 	13
-Peermade 	Idukki District 	10
-Udumbanchola (HO: Nedumkandam) 	Idukki District 	23
-Idukki (HO: Painavu) 	Idukki District 	19
-Thodupuzha 	Idukki District 	19
-Devikulam 	Idukki District 	12
-Kothamangalam 	Ernakulam District 	12
-Muvattupuzha 	Ernakulam District 	18
-Kunnathunad(HO: Perumbavoor) 	Ernakulam District 	23
-Kanayannur (HO: Eranakulam) 	Ernakulam District 	20
-Kochi (HO: Fort Kochi) 	Ernakulam District 	15
-North Paravur 	Ernakulam District 	13
-Aluva 	Ernakulam District 	16
-Chalakudy 	Thrissur District 	31
-Mukundapuram (HO: Irinjalakuda) 	Thrissur District 	29
-Kodungallur 	Thrissur District 	12
-Thrissur 	Thrissur District 	41
-Chavakkad 	Thrissur District 	17
-Kunnamkulam 	Thrissur District 	14
-Thalapilly (HO: Wadakkancheri) 	Thrissur District 	22
-Alathoor 	Palakkad District 	30
-Chittur 	Palakkad District 	30
-Palakkad 	Palakkad District 	30
-Pattambi 	Palakkad District 	18
-Ottappalam 	Palakkad District 	41
-Mannarkkad 	Palakkad District 	25
-Perinthalmanna 	Malappuram District 	24
-Nilambur 	Malappuram District 	19
-Eranad (HO: Manjeri) 	Malappuram District 	33
-Kondotty 	Malappuram District 	09
-Ponnani 	Malappuram District 	11
-Tirur 	Malappuram District 	30
-Thiroorangadi 	Malappuram District 	18
-Kozhikode 	Kozhikode District 	25
-Thamarassery 	Kozhikode District 	20
-Koyilandy 	Kozhikode District 	34
-Vatakara 	Kozhikode District 	28
-Vythiri (HO: Kalpetta) 	Wayanad District 	18
-Sulthan Bathery 	Wayanad District 	15
-Mananthavady 	Wayanad District 	16
-Thalassery 	Kannur District 	34
-Iritty 	Kannur District 	19
-Kannur 	Kannur District 	34
-Taliparamba 	Kannur District 	33
-Payyannur 	Kannur District 	12
-Hosdurg 	Kasaragod District 	20
-Vellarikundu 	Kasaragod District 	14
-Kasaragod 	Kasaragod District 	25
-Manjeswaram(Uppala) 	Kasaragod District
-=end
