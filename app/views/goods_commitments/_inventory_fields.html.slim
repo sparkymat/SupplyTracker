@@ -3,7 +3,7 @@
     .div class = "row col m2 s12"
       = f.association :item_category, label: "Category", input_html: {class: 'itemCategory'}
     .div class="row col m2 s12"
-      = f.association :item_type, collection: [["Add New", ""]] + ItemType.all.map { |item| [item.name, item.id] }, input_html: {class: 'itemType'}
+      = f.association :item_type, collection: ItemType.all.map { |item| [item.name, item.id] } + [["Add New", ""]], input_html: {class: 'itemType'}
     .div class="row col m3 s12" style="display:none"
       = f.input :item_type_name, placeholder: "Item Name", label: "Item Type"
     .div class="row col m2 s12"

@@ -46,7 +46,7 @@ table
         td = inventory.available_quantity
         td = inventory.contact_number
         td = inventory.contact_name
-        td = inventory.available_from
+        td = inventory.available_from.present? ? inventory.available_from.strftime('%d %b %Y') : ''
         td = link_to 'Edit', edit_inventory_path(inventory)
 
 br

@@ -25,7 +25,7 @@ class Inventory < ApplicationRecord
 
     if self.goods_commitment.present?
       self.contact_name = self.goods_commitment.name
-      self.contact_name = self.goods_commitment.phone_number
+      self.contact_number = self.goods_commitment.phone_number
       self.available_from = self.goods_commitment.available_from
     end
   end
