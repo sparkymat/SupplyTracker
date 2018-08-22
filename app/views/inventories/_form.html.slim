@@ -1,24 +1,43 @@
 = simple_form_for(@inventory) do |f|
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+  .col.m12.tb-mrgn-10
+    .form-inputs
+      .row
+        .col.m3.s12
+          = f.association :item_category
+        .col.m3.s12
+          = f.association :item_type
+        .col.m3.s12
+          = f.association :item_unit
+        .col.m3.s12
+          = f.input :quantity
+      .row
+        .col.m4.s12
+          = f.association :area
+        .col.m2.s12
+          = f.input :latitude
+        .col.m2.s12
+          = f.input :longitude
+        .col.m4.s12
+          = f.input :address
+      .row
+        .col.m4.s12
+          = f.input :initial_quantity
+        .col.m4.s12
+          = f.input :available_quantity
+        .col.m4.s12
+          = f.input :available_from, input_html: {class: 'datepicker'}
+      .row
+        .col.m3.s12
+          = f.input :volunteer_id
+        .col.m3.s12
+          = f.input :contact_number
+        .col.m3.s12
+          = f.input :contact_name
+        .col.m3.s12
+          = f.input :source
 
-  .form-inputs
-    = f.association :item_category
-    = f.association :item_type
-    = f.association :item_subtype
-    = f.association :item_unit
-    = f.input :quantity
-    = f.association :area
-    = f.input :latitude
-    = f.input :longitude
-    = f.input :address
-    = f.input :initial_quantity
-    = f.input :available_quantity
-    = f.input :source
-    = f.input :volunteer_id
-    = f.input :contact_number
-    = f.input :contact_name
-    = f.input :available_from, input_html: {class: 'datepicker'}
-
-  .form-actions
-    = f.button :submit
+  .col.m12.center.tb-mrgn-10.s12.submitButton
+    .form-actions
+      = f.button :submit
