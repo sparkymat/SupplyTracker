@@ -5,7 +5,7 @@
     .div class="row col m2 s12"
       = f.association :item_type, collection: [["Add New", ""]] + ItemType.all.map { |item| [item.name, item.id] }
     .div class="row col m3 s12"
-      = f.input :item_type_name, placeholder: "Item Name"
+      = f.input :item_type_name, placeholder: "Item Name", label: "Item Type"
     .div class="row col m2 s12"
       = f.association :item_unit
     .div class="row col m2 s12"
