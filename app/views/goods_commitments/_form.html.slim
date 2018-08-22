@@ -38,22 +38,21 @@
       .form-actions
         = f.button :submit, "SUBMIT"
 javascript:
+  function manageClickActions(){
+      $("#district").change(function (event, data) {
+          var selectedVal = parseInt(event.target.value);
+          var areas = window.SupplyTracker.data.areas.filter(function (area) {
+              return area.district_id === selectedVal
+          });
 
-  $(document).ready(function () {
-     $("#district").change(function (event, data) {
-         var selectedVal = parseInt(event.target.value);
-         var areas = window.SupplyTracker.data.areas.filter(function(area){
-             return area.district_id === selectedVal
-         });
-
-         var $el = $("#area");
-         $el.empty(); // remove old options
-         $.each(areas, function (key, area) {
-             $el.append($("<option></option>")
-                 .attr("value", area.id).text(area.name));
-         });
-         $el.formSelect();
-     });
+          var $el = $("#area");
+          $el.empty(); // remove old options
+          $.each(areas, function (key, area) {
+              $el.append($("<option></option>")
+                  .attr("value", area.id).text(area.name));
+          });
+          $el.formSelect();
+      });
 
 
       $(".itemCategory").change(function (event, data) {
@@ -84,12 +83,22 @@ javascript:
 
           var $el = $(targetItemTypeId);
 
-          if(event.target.value){
+          if (event.target.value) {
               $el.val("");
               $el.parent().parent().css("display", "none")
           } else {
               $el.parent().parent().css("display", "block")
           }
       });
+  }
+  $(document).ready(function () {
+      manageClickActions();
+      $('form').on('cocoon:after-insert', function (e, insertedItem) {
+          $('select').formSelect();
+          // $('select').select2({width: "100%"});
+          manageClickActions()
+      });
+
+
 
   });
