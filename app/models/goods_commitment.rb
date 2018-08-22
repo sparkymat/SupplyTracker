@@ -5,8 +5,8 @@ class GoodsCommitment < ApplicationRecord
   belongs_to :user, optional:true
   has_many :inventories, dependent: :destroy
 
-  belongs_to :district, required: false
-  belongs_to :area, required: false
+  belongs_to :district, optional: true
+  belongs_to :area, optional: true
 
   validates :inventories, :length => { :minimum => 1 }
 
