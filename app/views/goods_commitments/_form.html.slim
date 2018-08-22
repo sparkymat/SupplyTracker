@@ -16,7 +16,7 @@
         = render partial: "layouts/location", locals:{ loc:f }
 
     .div class="col m12 t-mrgn-10 s12"
-      h5 INVENTORY DETAILS
+      h5 Available Items
     = f.simple_fields_for :inventories do |inventory|
       = render 'inventory_fields', f: inventory
     .div class="col m12 s12"
@@ -25,4 +25,4 @@
 
     .div class="row col m12 center tb-mrgn-10 s12"
       .form-actions
-        = f.button :submit, label: "SUBMIT"
+        = f.button :submit, "SUBMIT"
