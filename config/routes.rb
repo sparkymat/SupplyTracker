@@ -30,5 +30,9 @@ Rails.application.routes.draw do
   resources :item_categories
   resources :mode_of_transports
 
+  namespace :api do
+    get 'config', to: 'config#index'
+  end
+
   root "goods_commitments#new"
 end

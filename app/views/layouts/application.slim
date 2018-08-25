@@ -22,3 +22,5 @@ html
         M.AutoInit();
       });
     script type = "text/javascript" src = "https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&key=#{ENV['GOOGLE_API_KEY']}"
+    - Dir[Rails.root.join('public', 'js', 'generated', '*.js')].each do |js_file|
+      script type="text/javascript" src="#{ js_file.sub(Rails.root.join('public').to_s, '') }"
